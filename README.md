@@ -1,6 +1,8 @@
 guia do estágio:
 
-6 a 12 de março - desenho dos ecrãs da aplicação (Figma)
+8 a 10 de março -definir das funcionalidades da aplicação
+
+10 a 12 de março - desenho dos ecrãs da aplicação (Figma)
 
 13 a 21 de março - criação da base de dados do projeto
 
