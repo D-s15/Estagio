@@ -1,14 +1,14 @@
-guia do estágio:
+pleneamento do projeto de estágio:
 
-8 a 10 de março -definir das funcionalidades da aplicação
+8 a 10 de março -definir as funcionalidades da aplicação
 
 10 a 12 de março - desenho dos ecrãs da aplicação (Figma)
 
-13 a 21 de março - criação da base de dados do projeto
+13 a 21 de março - definição da estrutura da base de dados
 
-22 de março a 1 de abril - criação do projeto no android studio
+22 de março a 1 de abril - criação da base do projeto no android studio (arquitetura MVVM, bases de dados locais, classes...)
 
-2 a 10 de abril - criação do projeto laravel
+2 a 10 de abril - criação da base do projeto laravel
 
 10 a 25 de abril- desenvolvimento da aplicação laravel
 
@@ -18,4 +18,4 @@ guia do estágio:
 
 6 a 18 de junho - testes com a aplicação
 
-19 de junho a 5 de julho - elaboração do relatório do estágio
+elaboração do relatório do estágio (será realizada ao longo do estágio, à medida que as tarefas anteriormente mencionadas forem sendo concluídas)
