@@ -18,4 +18,4 @@ pleneamento do projeto de estágio:
 
 6 a 18 de junho - testes com a aplicação
 
-elaboração do relatório do estágio (será realizada ao longo do estágio, à medida que as tarefas anteriormente mencionadas forem sendo concluídas)
+elaboração do relatório do estágio (será realizado ao longo do estágio, à medida que as tarefas anteriormente mencionadas forem sendo concluídas)
