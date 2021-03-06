@@ -19,3 +19,19 @@ pleneamento do projeto de estágio:
 6 a 18 de junho - testes com a aplicação
 
 elaboração do relatório do estágio (será realizado ao longo do estágio, à medida que as tarefas anteriormente mencionadas forem sendo concluídas)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Funcionalidades planeadas para a aplicação:
+
+- Criação de conta de utilizador;
+- Autenticação de conta de utilizador;
+- Alteração da palavra-passe do utilizador;
+- Apagar conta de utilizador;
+- Visualização dos monumentos disponíveis;
+- Pesquisa de monumentos por nome;
+- Consulta da informação de um monumento;
+- Visualização dos pontos de interesse de um monumento;
+- Consulta da informação de um ponto de interesse;
+- Classificação de um monumento (0 a 5 estrelas);
+- Marcar ponto de interesse de um monumento como visto;
