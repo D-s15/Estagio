@@ -20,7 +20,7 @@ pleneamento do projeto de estágio:
 
 elaboração do relatório do estágio (será realizado ao longo do estágio, à medida que as tarefas anteriormente mencionadas forem sendo concluídas)
 
-------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Funcionalidades planeadas para a aplicação:
 
