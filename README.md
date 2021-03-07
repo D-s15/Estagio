@@ -33,5 +33,6 @@ Funcionalidades planeadas para a aplicação:
 - Consulta da informação de um monumento;
 - Visualização dos pontos de interesse de um monumento;
 - Consulta da informação de um ponto de interesse;
-- Classificação de um monumento (0 a 5 estrelas);
+- Classificação de um ponto de interesse (0 a 5 estrelas);
+- Visualização da classificação de um monumento (média das classificações dos pontos de interesse associados ao monumento); 
 - Marcar ponto de interesse de um monumento como visto;
