@@ -1,8 +1,8 @@
 pleneamento do projeto de estágio:
 
-8 a 10 de março -definir as funcionalidades da aplicação
+8 a 10 de março -definir as funcionalidades da aplicação V
 
-10 a 12 de março - desenho dos ecrãs da aplicação (Figma)
+10 a 12 de março - desenho dos ecrãs da aplicação android (Figma) e web (wix) V 
 
 13 a 21 de março - definição da estrutura da base de dados
 
