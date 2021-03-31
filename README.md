@@ -4,7 +4,7 @@ pleneamento do projeto de estágio:
 
 10 a 12 de março - desenho dos ecrãs da aplicação android (Figma) e web (wix) V 
 
-13 a 21 de março - definição da estrutura da base de dados
+13 a 21 de março - definição da estrutura da base de dados V
 
 22 de março a 1 de abril - criação da base do projeto no android studio (arquitetura MVVM, bases de dados locais, classes...)
 
