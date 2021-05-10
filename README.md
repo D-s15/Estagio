@@ -8,7 +8,7 @@ pleneamento do projeto de estágio:
 
 22 de março a 1 de abril - criação da base do projeto no android studio (arquitetura MVVM, bases de dados locais, classes...) V
 
-2 a 10 de abril - criação da base do projeto laravel
+2 a 10 de abril - criação da base do projeto laravel V
 
 10 a 25 de abril- desenvolvimento da aplicação laravel
 
