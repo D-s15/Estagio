@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.bejamonuments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_monumentFragment"
+            app:destination="@id/monumentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/monumentFragment"
+        android:name="com.example.bejamonuments.MonumentFragment"
+        android:label="fragment_monument"
+        tools:layout="@layout/fragment_monument" >
+        <action
+            android:id="@+id/action_monumentFragment_to_interestPointFragment"
+            app:destination="@id/interestPointFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/interestPointFragment"
+        android:name="com.example.bejamonuments.InterestPointFragment"
+        android:label="fragment_interest_point"
+        tools:layout="@layout/fragment_interest_point" />
+</navigation>
