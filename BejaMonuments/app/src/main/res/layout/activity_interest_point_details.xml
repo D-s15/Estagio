@@ -30,9 +30,9 @@
                 android:text="TextView" />
 
             <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/imageViewPointImage"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
                 android:layout_gravity="center"
                 android:paddingTop="16dp"
                 android:paddingBottom="16dp"
@@ -79,8 +79,8 @@
 
             <RatingBar
                 android:id="@+id/pointsRatingBar"
-                android:layout_width="250dp"
-                android:layout_height="50dp"
+                android:layout_width="242dp"
+                android:layout_height="75dp"
                 android:layout_gravity="center"
                 android:paddingTop="16dp"
                 android:paddingBottom="16dp" />

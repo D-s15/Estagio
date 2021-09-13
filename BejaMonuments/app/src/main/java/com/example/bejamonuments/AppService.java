@@ -18,7 +18,7 @@ public interface AppService {
     @GET("interestpoints/{id}")
     Call<InterestPoint> getInterestPoint(@Path("id") long id);
 
-    @GET("interestPointsByMonumentId")
+    @GET("interestpoints/")
     Call<List<InterestPoint>> getInterestPointsByMonumentId(@Query("monumentId") long id);
 
 }
