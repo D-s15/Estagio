@@ -3,15 +3,19 @@ package com.example.bejamonuments;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.google.gson.annotations.SerializedName;
+
 @Entity
-public class Monument {
+public class Monument{
 
     @PrimaryKey
     private long id;
     private String name;
     private String schedule_AM;
     private String schedule_PM;
+    @SerializedName("day_off")
     private String dayOff;
+
     private String description;
     private String image;
     private int monumentRating;

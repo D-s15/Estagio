@@ -38,7 +38,7 @@ public class Repository {
     }
 
     public void updateMonuments(final Context context){
-        Call<List<Monument>> call =this.appService.getMonumentList();
+        Call<List<Monument>> call = this.appService.getMonumentList();
         call.enqueue(new Callback<List<Monument>>() {
             @Override
             public void onResponse(Call<List<Monument>> call, Response<List<Monument>> response) {
@@ -57,7 +57,7 @@ public class Repository {
         });
     }
 
-    public LiveData<Monument> getMonument(Context context, long id){
+    public LiveData<Monument> getMonument(final Context context, long id){
         MutableLiveData<Monument> monumentLiveData = new MutableLiveData<>();
 
         Call<Monument> call = appService.getMonument(id);
@@ -66,6 +66,7 @@ public class Repository {
             public void onResponse(Call<Monument> call, Response<Monument> response) {
                 if (response.isSuccessful()){
                     final Monument monument = response.body();
+                    if (monument != null)
                     monumentLiveData.postValue(monument);
                 }
             }
@@ -79,15 +80,16 @@ public class Repository {
         return monumentLiveData;
     }
 
-    public LiveData<List<InterestPoint>> getInterestPointsByMonumentId(long monumentId, Context context) {
-        Call<List<InterestPoint>> call =this.appService.getInterestPointsByMonumentId(monumentId);
+    public LiveData<List<InterestPoint>> getInterestPointsByMonumentId(final long monumentId, final Context context) {
+        MutableLiveData<List<InterestPoint>> pointsList = new MutableLiveData<>();
+        Call<List<InterestPoint>> call = this.appService.getInterestPointsByMonumentId(monumentId);
         call.enqueue(new Callback<List<InterestPoint>>() {
             @Override
             public void onResponse(Call<List<InterestPoint>> call, Response<List<InterestPoint>> response) {
                 if (response.isSuccessful()){
                     final List<InterestPoint> interestPointsList = response.body();
                     if (interestPointsList != null){
-                        getInterestPointsListLiveData.postValue(interestPointsList);
+                        pointsList.postValue(interestPointsList);
                     }
                 }
             }
@@ -97,7 +99,7 @@ public class Repository {
                 Log.e("menu", "an error occurred");
             }
         });
-        return getInterestPointsListLiveData;
+        return pointsList;
     }
 
     public LiveData<InterestPoint> getIntetestPoint(long id, Context context) {

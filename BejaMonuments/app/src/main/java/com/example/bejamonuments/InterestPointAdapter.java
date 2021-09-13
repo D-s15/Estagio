@@ -1,8 +1,6 @@
 package com.example.bejamonuments;
 
 import android.content.Context;
-import android.service.controls.templates.ControlTemplate;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +16,10 @@ import java.util.List;
 public class InterestPointAdapter extends BaseAdapter {
     private List<InterestPoint> interestPointList = new ArrayList<>();
     private Context context;
+
+    public InterestPointAdapter(Context context) {
+        this.context = context;
+    }
 
     @Override
     public int getCount() {
@@ -42,8 +44,8 @@ public class InterestPointAdapter extends BaseAdapter {
 
         InterestPoint interestPoint = this.getItem(position);
 
-        TextView textViewInterestPointName = convertView.findViewById(R.id.interestPointName);
-        ImageView ImageViewInterestPointImage = convertView.findViewById(R.id.interestPointImage);
+        TextView textViewInterestPointName = convertView.findViewById(R.id.textViewPointName);
+        ImageView ImageViewInterestPointImage = convertView.findViewById(R.id.imageViewInterestPointImage);
 
         textViewInterestPointName.setText(interestPoint.getName());
         Glide.with(this.context).load(interestPoint.getImage()).into(ImageViewInterestPointImage);

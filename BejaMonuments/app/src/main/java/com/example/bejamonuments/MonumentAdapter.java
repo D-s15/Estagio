@@ -28,7 +28,7 @@ public class MonumentAdapter extends BaseAdapter {
 
     @Override
     public Monument getItem(int position) {
-        return monumentList.get(position);
+        return this.monumentList.get(position);
     }
 
     @Override
