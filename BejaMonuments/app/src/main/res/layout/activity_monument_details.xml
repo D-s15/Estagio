@@ -62,15 +62,32 @@
                 android:paddingBottom="16dp"
                 android:text="TextView" />
 
-            <TextView
-                android:id="@+id/monumentLocation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:gravity="center"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:text="TextView" />
+                android:orientation="horizontal"
+                android:showDividers="middle">
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="onClickMap"
+                    tools:srcCompat="@drawable/ic_room_black_24dp" />
+
+                <TextView
+                    android:id="@+id/monumentLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="16dp"
+                    android:gravity="center"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:text="Localização" />
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/monumentDescription"
@@ -83,7 +100,8 @@
                 android:paddingRight="16dp"
                 android:paddingBottom="16dp"
                 android:text="TextView"
-                android:textAlignment="textStart" />
+                android:textAlignment="textStart"
+                tools:ignore="RtlCompat" />
 
             <TextView
                 android:id="@+id/ratingLabel"
@@ -107,7 +125,7 @@
 
             <ListView
                 android:id="@+id/interestPointList"
-                android:layout_width="300dp"
+                android:layout_width="360dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
                 android:paddingTop="16dp"

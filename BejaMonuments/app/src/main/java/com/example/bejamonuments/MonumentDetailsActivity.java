@@ -6,9 +6,11 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RatingBar;
@@ -42,6 +44,7 @@ public class MonumentDetailsActivity extends AppCompatActivity {
         TextView monumentLocation = findViewById(R.id.monumentLocation);
         TextView monumentDescription = findViewById(R.id.monumentDescription);
         RatingBar ratingBar = findViewById(R.id.ratingBar);
+        ImageButton imageButton = findViewById(R.id.imageButton);
 
         this.viewModel = new ViewModelProvider(this).get(MonumentViewModel.class);
         Bundle bundle = getIntent().getExtras();
@@ -56,7 +59,6 @@ public class MonumentDetailsActivity extends AppCompatActivity {
                         monumentDayOff.setText(monument.getDayOff());
                         monumentSchedule.setText("Abre das " + monument.getSchedule_AM() + " e das " + monument.getSchedule_PM());
                         monumentDescription.setText(monument.getDescription());
-                        monumentLocation.setText(monument.getLocation());
                         int numOfStars = ratingBar.getNumStars();
                         }
                 });
@@ -91,4 +93,44 @@ public class MonumentDetailsActivity extends AppCompatActivity {
 
     }
 
+    public void onClickMap(View view){
+    this.viewModel.getMonument(this, id).observe(this, new Observer<Monument>() {
+        @Override
+        public void onChanged(Monument monument) {
+            String url = monument.getLocation();
+
+            Intent intent = new Intent();
+            intent.setAction(intent.ACTION_VIEW);
+            intent.addCategory(intent.CATEGORY_BROWSABLE);
+
+            intent.setData(Uri.parse(url));
+
+            startActivity(intent);}
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        this.interestPointViewModel.getInterestPointList(id, this).observe(this, new Observer<List<InterestPoint>>() {
+            @Override
+            public void onChanged(List<InterestPoint> interestPoints) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        for (InterestPoint interestPoint : interestPoints) {
+                            InterestPointVisited interestPointVisited = interestPointViewModel.getVisitedState(MonumentDetailsActivity.this, interestPoint.getId());
+                            if (interestPointVisited != null) interestPoint.setVisited(interestPointVisited.isVisited());
+                        }
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                MonumentDetailsActivity.this.adapter.updateUI(interestPoints);
+                            }
+                        });
+                    }
+                }).start();
+            }
+        });
+    }
 }

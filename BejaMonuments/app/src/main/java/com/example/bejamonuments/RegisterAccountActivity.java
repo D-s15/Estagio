@@ -13,31 +13,42 @@ public class RegisterAccountActivity extends AppCompatActivity {
 
     private User user;
     private UserViewModel viewModel;
+    private EditText editTextPasswordRegister;
+    private EditText editTextPasswordConfirm;
+    private EditText phone;
+    private EditText email;
+    private EditText username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_account);
 
+        editTextPasswordConfirm = findViewById(R.id.editTextConfirmPasssword);
+        editTextPasswordRegister = findViewById(R.id.editTextPassword);
+        phone = findViewById(R.id.editTextPhoneNumber);
+        email = findViewById(R.id.editTextEmail);
+        username = findViewById(R.id.editTextUsername);
+
         this.viewModel = new ViewModelProvider(this).get(UserViewModel.class);
     }
 
     public void onClickRegister(View view){
 
-        EditText editTextName = findViewById(R.id.editTextName);
-        EditText editTextEmail = findViewById(R.id.editTextEmail);
-        EditText editTextPhone = findViewById(R.id.editTextPhoneNumber);
-        EditText editTextPassword = findViewById(R.id.editTextPassword);
-        EditText editTextConfirmPassword = findViewById(R.id.editTextConfirmPasssword);
+        username = findViewById(R.id.editTextUsername);
+        email = findViewById(R.id.editTextEmail);
+        phone = findViewById(R.id.editTextPhoneNumber);
+        editTextPasswordRegister = findViewById(R.id.editTextPassword);
+        editTextPasswordConfirm = findViewById(R.id.editTextConfirmPasssword);
 
-        String name = editTextName.getText().toString();
-        String email = editTextEmail.getText().toString();
-        String phone = editTextPhone.getText().toString();
-        String password = editTextPassword.getText().toString();
-        String confirmPassword = editTextConfirmPassword.getText().toString();
+        String username = this.username.getText().toString();
+        String email = this.email.getText().toString();
+        String phone = this.phone.getText().toString();
+        String password = this.editTextPasswordRegister.getText().toString();
+        String confirmPassword = this.editTextPasswordConfirm.getText().toString();
 
-        if (name.isEmpty()){
-            Toast.makeText(this, "o nome não pode estar vazio", Toast.LENGTH_SHORT).show();
+        if (username.isEmpty()){
+            Toast.makeText(this, "o nome de utilizador não pode estar vazio", Toast.LENGTH_SHORT).show();
             return;
         }
         else if (email.isEmpty()){
@@ -57,6 +68,8 @@ public class RegisterAccountActivity extends AppCompatActivity {
             return;
         }
         else{
+            viewModel.newUser(username, email, phone, password, this);
+            viewModel.updateUsers(this);
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }
@@ -65,5 +78,11 @@ public class RegisterAccountActivity extends AppCompatActivity {
     public void OnClickToLogin(View view){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        this.viewModel.updateUsers(this);
     }
 }

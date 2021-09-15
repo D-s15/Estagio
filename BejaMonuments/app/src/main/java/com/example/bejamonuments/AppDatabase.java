@@ -6,7 +6,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = User.class, version = 1)
+@Database(entities = {User.class, InterestPointVisited.class}, version = 3)
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract UserDao getUserDao();
@@ -16,7 +16,7 @@ public abstract class AppDatabase extends RoomDatabase {
     private static AppDatabase INSTANCE;
 
     public static AppDatabase getInstance(Context context){
-        INSTANCE = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "MonumentsDB").build();
+        INSTANCE = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "MonumentsDB").fallbackToDestructiveMigration().build();
 
         return INSTANCE;
     }

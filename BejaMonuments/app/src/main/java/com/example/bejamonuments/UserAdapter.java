@@ -12,6 +12,10 @@ public class UserAdapter extends BaseAdapter {
     private List<User> userList = new ArrayList<>();
     private Context context;
 
+    public UserAdapter(Context context) {
+        this.context = context;
+    }
+
     @Override
     public int getCount() {
         return userList.size();
@@ -29,6 +33,8 @@ public class UserAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
+
         return convertView;
     }
 

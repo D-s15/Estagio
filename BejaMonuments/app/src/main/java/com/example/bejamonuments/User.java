@@ -1,6 +1,7 @@
 package com.example.bejamonuments;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity
@@ -21,6 +22,13 @@ public class User {
         this.password = password;
     }
 
+    @Ignore
+    public User(String username, String email, String phone, String password) {
+        this.email = email;
+        this.username = username;
+        this.phone = phone;
+        this.password = password;
+    }
     public long getId() {
         return id;
     }
