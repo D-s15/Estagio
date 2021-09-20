@@ -7,7 +7,10 @@ public class Datasource {
 
     private static final String ENDPOINT = "https://my-json-server.typicode.com/D-s15/Estagio/";
 
-    private static final Retrofit retrofit = new Retrofit.Builder().baseUrl(ENDPOINT).addConverterFactory(GsonConverterFactory.create()).build();
+    private static final Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(ENDPOINT).
+                    addConverterFactory(GsonConverterFactory.create())
+                    .build();
 
     private static AppService appService;
 

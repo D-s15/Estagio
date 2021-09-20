@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Monument;
 use App\Models\InterestPoint;
@@ -34,10 +34,11 @@ class WelcomeController extends Controller
         return view('welcome', compact('monument'));
     }
 
-    public function showMon($id){
+    public function showMonPoints($id){
         $monument = Monument::find($id);
-        $points = InterestPoint::query()->where('monument_id', '=', $id);
-     
+       $points = DB::table('interest_points')->where('monument_id', '=', $id)->get();
+       // $points = InterestPoint::all();
+
         return view('welcome2', compact('monument', 'points'));
     }
 
